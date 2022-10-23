@@ -19,6 +19,7 @@ resources:
 - base
 - config/hpa.yaml
 - config/keda-loadgenerator.yaml
+- config/vpa.yaml
 
 patches:
 - patch: |-
