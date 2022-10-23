@@ -17,6 +17,7 @@ kind: Kustomization
 namespace: microservices-demo
 resources:
 - base
+- config/hpa.yaml
 
 patches:
 - patch: |-
