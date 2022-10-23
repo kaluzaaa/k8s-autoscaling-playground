@@ -26,3 +26,10 @@ patches:
   target:
     kind: Deployment
     name: loadgenerator
+- patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 5
+  target:
+    kind: Deployment
+    name: loadgenerator
