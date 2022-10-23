@@ -18,6 +18,7 @@ namespace: microservices-demo
 resources:
 - base
 - config/hpa.yaml
+- config/keda-loadgenerator.yaml
 
 patches:
 - patch: |-
@@ -28,9 +29,8 @@ patches:
     kind: Deployment
     name: loadgenerator
 - patch: |-
-    - op: replace
+    - op: remove
       path: /spec/replicas
-      value: 5
   target:
     kind: Deployment
     name: loadgenerator
