@@ -1,0 +1,15 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: loadgenerator
+spec:
+  scaleTargetRef:
+    name: loadgenerator
+  minReplicaCount:  5
+  triggers:
+  - type: cron
+    metadata:
+      timezone: Europe/Warsaw
+      start: 30 * * * * 
+      end: 45 * * * *
+      desiredReplicas: "100"
